@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <!-- Permissions for sensors and location -->
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.DeviceDefault">
+
+        <uses-library
+            android:name="com.google.android.wearable"
+            android:required="true" />
+
+        <!-- Main Activity of the Wear OS App -->
+        <activity
+            android:name=".WearOSMainActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Settings Activity for the Watch Face preferences -->
+        <activity
+            android:name=".WearOSSettingsActivity"
+            android:exported="false"
+            android:label="Watch Face Settings"
+            android:theme="@android:style/Theme.DeviceDefault.Light" />
+
+    </application>
+</manifest>

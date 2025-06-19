@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@android:color/black"
+    tools:context=".WearOSMainActivity">
+
+    <!-- This ImageView will display the arrows (hidden in neutral state) -->
+    <ImageView
+        android:id="@+id/arrow_image_view"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:visibility="gone"
+        android:scaleType="fitCenter"
+        tools:src="@drawable/ic_arrow_right_white"
+        android:contentDescription="Directional Arrow" />
+
+    <!-- Text for Time -->
+    <TextView
+        android:id="@+id/time_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        android:text="10:38"
+        android:gravity="center"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Text for Cardinal Direction -->
+    <TextView
+        android:id="@+id/cardinal_direction_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="30sp"
+        android:text="N/A"
+        android:gravity="center"
+        android:layout_marginBottom="4dp"/>
+
+    <!-- Text for Speed -->
+    <TextView
+        android:id="@+id/speed_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="30sp"
+        android:text="N/A"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Settings Button -->
+    <TextView
+        android:id="@+id/settings_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="25sp"
+        android:padding="8dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>
