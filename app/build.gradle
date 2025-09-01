@@ -1,6 +1,7 @@
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -30,26 +31,49 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    
+    buildFeatures {
+        compose true
+    }
 }
 
 dependencies {
-    // Core AndroidX KTX for Kotlin extensions
-    implementation 'androidx.core:core-ktx:1.10.1'
-
-    // Wear OS specific UI library
-    implementation 'androidx.wear:wear:1.2.0'
-
-    // AppCompat for using AppCompatActivity and other modern Android UI components
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-
+    // Compose BOM
+    implementation platform(libs.compose.bom)
+    
+    // Activity Compose
+    implementation libs.activity.compose
+    
+    // Core Splash Screen
+    implementation libs.core.splashscreen
+    
+    // Compose UI
+    implementation libs.ui
+    implementation libs.ui.graphics
+    implementation libs.ui.tooling.preview
+    
+    // Wear Compose Material
+    implementation libs.compose.material
+    implementation libs.compose.foundation
+    
+    // Play Services Wearable
+    implementation libs.play.services.wearable
+    
     // Google Play Services for Location capabilities (GPS speed)
     implementation 'com.google.android.gms:play-services-location:21.0.1'
-
-    // Wearable support library for general Wear OS specific APIs (compileOnly as it's provided by the device)
-    compileOnly 'com.google.android.wearable:wearable:2.9.0'
-
+    
+    // ViewModel Compose
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0'
+    
+    // Wearable Tooling Preview
+    implementation libs.wear.tooling.preview
+    
     // Testing dependencies
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation libs.ui.test.junit4
+    
+    debugImplementation libs.ui.tooling
+    debugImplementation libs.ui.test.manifest
 }
