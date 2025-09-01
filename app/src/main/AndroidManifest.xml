@@ -23,7 +23,7 @@
 
         <!-- Main Activity of the Wear OS App -->
         <activity
-            android:name=".WearOSMainActivity"
+            android:name="com.example.cyclesignal.WearOSMainActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
@@ -34,7 +34,7 @@
 
         <!-- Settings Activity for the Watch Face preferences -->
         <activity
-            android:name=".WearOSSettingsActivity"
+            android:name="com.example.cyclesignal.WearOSSettingsActivity"
             android:exported="false"
             android:label="Watch Face Settings"
             android:theme="@android:style/Theme.DeviceDefault.Light" />

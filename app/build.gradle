@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.wearosapp' // Ensure this matches your package name
+    namespace 'com.example.cyclesignal'
     compileSdk 34 // Or your target SDK
 
     defaultConfig {
-        applicationId "com.example.wearosapp" // Ensure this matches your package name
+        applicationId "com.example.cyclesignal"
         minSdk 28 // Wear OS minimum SDK
         targetSdk 34 // Or your target SDK
         versionCode 1
